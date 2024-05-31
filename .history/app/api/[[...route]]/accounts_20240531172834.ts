@@ -55,7 +55,7 @@ const app = new Hono()
         zValidator(
             "json",
             z.object({
-                ids: z.array(z.string()),
+                ids: z.array(z.string(),)
             }),
         ),
         async (c) => {

@@ -93,10 +93,8 @@ export function DataTable<TData, TValue>({
             onClick={ async() => {
               const ok = await confirm();
 
-              if (ok) {
-                onDelete(table.getFilteredSelectedRowModel().rows)
-                table.resetRowSelection();
-              } 
+              onDelete(table.getFilteredSelectedRowModel().rows)
+              table.resetRowSelection();
             }}
           >
             <Trash className="size-4 mr-2" />

@@ -25,6 +25,7 @@ const AccountsPage = () => {
         accountsQuery.isLoading ||
         deleteAccounts.isPending;
 
+
     if (accountsQuery.isLoading) {
         return (
             <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-24">
@@ -59,11 +60,8 @@ const AccountsPage = () => {
                         filterKey="email"
                         columns={columns} 
                         data={accounts} 
-                        onDelete={(row) => {
-                            const ids = row.map((r) => r.original.id);
-                            deleteAccounts.mutate({ ids });
-                        }}
-                        disabled={isDisabled}
+                        onDelete={() => {}}
+                        disabled={false}
                     />
                 </CardContent>
             </Card>           
