@@ -141,27 +141,7 @@ const app = new Hono()
                 return c.json({ error: "Missing id" }, 400);
             }
 
-            if (!auth?.userId) {
-                return c.json({ error: "Unauthorized" }, 401);
-            }
-
-            const [data] = await db
-                .update(accounts)
-                .set(values)
-                .where(
-                    and(
-                        eq(accounts.userId, auth.userId),
-                        eq(accounts.id, id),
-                    ),
-                )
-                .returning();
-            
-            if (!data) {
-                return c.json({ erro: "Not found" }, 404);
-            }
-
-            return c.json({ data });
-        },
-    );
+        }
+    )
 
 export default app;

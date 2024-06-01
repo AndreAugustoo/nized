@@ -14,7 +14,6 @@ export const SheetProvider = () => {
     return (
         <>
             <NewAccountSheet />
-            <EditAccountSheet />
         </>
     );
 };

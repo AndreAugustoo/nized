@@ -145,7 +145,7 @@ const app = new Hono()
                 return c.json({ error: "Unauthorized" }, 401);
             }
 
-            const [data] = await db
+            const {data} = await db
                 .update(accounts)
                 .set(values)
                 .where(
@@ -155,13 +155,7 @@ const app = new Hono()
                     ),
                 )
                 .returning();
-            
-            if (!data) {
-                return c.json({ erro: "Not found" }, 404);
-            }
-
-            return c.json({ data });
-        },
-    );
+        }
+    )
 
 export default app;

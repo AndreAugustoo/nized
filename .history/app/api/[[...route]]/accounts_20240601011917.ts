@@ -159,9 +159,7 @@ const app = new Hono()
             if (!data) {
                 return c.json({ erro: "Not found" }, 404);
             }
-
-            return c.json({ data });
-        },
-    );
+        }
+    )
 
 export default app;
