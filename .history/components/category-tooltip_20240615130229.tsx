@@ -4,12 +4,11 @@ import { formatCurrency } from "@/lib/utils";
 
 import { Separator } from "@/components/ui/separator";
 
-export const CustomTooltip = ({ active, payload }: any) => {
+export const CategoryTooltip = ({ active, payload }: any) => {
     if (!active) return null;
 
-    const date = payload[0].payload.date;
-    const income = payload[0].value;
-    const expenses = payload[1].value;
+    const name = payload[0].payload.name;
+    const value = payload[0].value;
 
     return (
         <div className="rounded-sm bg-white shadow-sm border overflow-hidden">
